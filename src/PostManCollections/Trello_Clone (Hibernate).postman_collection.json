@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "e1a1fc6c-ee3d-4538-b853-4a5b2419c290",
+		"name": "Trello_Clone (Hibernate)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "posting the user into DB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sravs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "To get the list of projects for a user by passing his UserId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/users?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"users"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "To create a project for a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\":\"Task Manager\",\r\n     \"ownerId\":2,\r\n     \"userId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "To get the project and list of task associated with it by passing projectId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/projects?projectId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "projectId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "To post the task invloved in the project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"design a backend by hibernate\",\r\n    \"description\":\"Task Management Tool\",\r\n    \"status\":\"to_do\",\r\n    \"startDate\":\"2001-12-02\",\r\n    \"endDate\":\"2002-12-02\",\r\n    \"projectId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "To get the Task name and List of actvities associated to it by passing taskId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/tasks?taskId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "To update the status of task",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "To post the activities for the task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"great bud\",\r\n    \"date\":\"2001-12-02\",\r\n    \"userId\":2,\r\n    \"taskId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/activities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserProject",
+			"item": [
+				{
+					"name": "To get the list of users involved in that project by passing projectId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/userproject?projectId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TrelloClone-Hibernate-1.0-SNAPSHOT",
+								"userproject"
+							],
+							"query": [
+								{
+									"key": "projectId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "To post the users associated for that project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"projectId\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/TrelloClone-Hibernate-1.0-SNAPSHOT/userproject",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"TrelloClone-Hibernate-1.0-SNAPSHOT",
+						"userproject"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

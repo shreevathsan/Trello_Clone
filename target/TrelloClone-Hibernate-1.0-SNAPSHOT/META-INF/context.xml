@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/DerbyTomcat">
+
+    <!--    <Resource name="jdbc/testdb"-->
+    <!--              auth="Container" -->
+    <!--              type="javax.sql.DataSource"-->
+    <!--              driverClassName="org.apache.derby.jdbc.ClientDriver" -->
+    <!--              username="app"-->
+    <!--              password="app" -->
+    <!--              url="jdbc:derby://localhost:1527/testdb" -->
+    <!--              maxActive="10" maxIdle="4" -->
+    <!--    />-->
+    <Resource name="jdbc/"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/"
+              username="root"
+              password="Shreeravi@123"
+              maxActive="10"
+              maxIdle="2"
+    />
+</Context>

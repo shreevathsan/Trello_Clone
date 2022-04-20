@@ -1,0 +1,19 @@
+<hibernate-configuration>
+    <session-factory>
+        <!--  JDBC Database connection settings  -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/trello_clone_hibernate?useSSL=false
+        </property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Shreeravi@123</property>
+        <!--  JDBC connection pool settings ... using built-in test pool  -->
+        <property name="connection.pool_size">5</property>
+        <!--  Select our SQL dialect  -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--  Echo the SQL to stdout  -->
+        <property name="show_sql">true</property>
+        <!--  Set the current session context  -->
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.id.new_generator_mappings">false</property>
+    </session-factory>
+</hibernate-configuration>
